@@ -1,8 +1,8 @@
 Flask==2.2.3
-tensorflow==2.11.0
-scikit-learn==1.2.1
-numpy==1.24.2
-catboost==1.1.1
+tensorflow
+scikit-learn
+numpy
+catboost
 gunicorn
 pickle-mixin
 virtualenv
