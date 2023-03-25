@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ <style>
+ input[type=submit] {
+  background-color: #AFEEEE;
+}
+ input[type=reset] {
+  background-color: #FFEBCD;
+}
+</style>
+
+    <title>Предсказание модели соотношения матрица-наполнитель</title>
+
+</head>
+<body>
+    <h1 style="color:#6a5acd; font-family:verdana;">Предсказание модели соотношения матрица-наполнитель</h1>
+    <form action="" method="post">
+    <fieldset>
+        <legend style="font-size:20px; color: #228B22">Введите значения oт 0 до 1 </legend>
+    <p>
+            <label for="density">Введите Плотность, кг/м3</label>
+	    <input type="text" name="density" required> 
+    </p><p>
+	    <label for="elast">Введите Модуль упругости, ГПа</label>
+	    <input type="text" name="elast" required>
+    </p><p>
+	    <label for="hardener">Введите Количество отвердителя, м.%</label>
+	    <input type="text" name="hardener" required>
+    </p><p>
+        <label for="ep_group">Введите Содержание эпоксидных групп,%_2</label>
+	    <input type="text" name="ep_group" required>
+    </p><p>
+        <label for="temp">Введите Температура вспышки, С_2</label>
+	    <input type="text" name="temp" required>
+    </p><p>
+        <label for="surf_density">Введите Поверхностная плотность, г/м2</label>
+	    <input type="text" name="surf_density" required>
+    </p><p>
+        <label for="elast_tension">Введите Модуль упругости при растяжении, ГПа</label>
+	    <input type="text" name="elast_tension" required>
+    </p><p>
+        <label for="st_tension">Введите Прочность при растяжении, МПа</label>
+	    <input type="text" name="st_tension" required>
+    </p><p>
+        <label for="resin">Введите Потребление смолы, г/м2</label>
+	    <input type="text" name="resin" required>
+    </p><p>
+        <label for="angle">Введите Угол нашивки, град</label>
+	    <input type="number" name="angle" min='0' max='1' step='1' required>
+    </p><p>
+        <label for="step">Введите Шаг нашивки</label>
+	    <input type="text" name="step" required>
+    </p><p>
+        <label for="patch">Введите Плотность нашивки</label>
+	    <input type="text" name="patch" required>
+	</p>
+    </fieldset>
+	<p>
+	    <input type="submit" value="Предсказать">
+        <input type="reset" value="Обновить">
+	</p>
+    </form>
+    <p>
+    {% if message %}
+        <p><b>{{message}}</b></p>
+    {% endif %}
+    </p>
+</body>
+<footer>
+    <p>
+        <a href="{{url_for('choose_prediction_method')}}"><button>Вернуться на главную страницу</button></a>
+    </p>
+</footer>
+</html>

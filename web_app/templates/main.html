@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Прогнозирование конечных свойств композиционных материалов</title>
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: sans-serif;
+    }
+    
+    /* Style the header */
+    header {
+      font-family: "Comic Sans", cursive;
+      /*background-color: #1b99bf;*/ 
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: #4b0082;
+      background-image: linear-gradient(to bottom right, red, yellow);
+}
+    
+    /* Create two columns/boxes that floats next to each other */
+    nav {
+      float: right;
+      width: 30%;
+      height: 350px;
+      background: #F0FFFF;
+      padding: 20px;
+    }
+    
+    
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #FFFAFA;
+      height: 350px; 
+      text-align: left;
+      font-size: 22px;
+    }
+    
+    
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    
+    footer {
+      background-color: #E6E6FA;
+      padding: 30px;
+      text-align: left;
+      font-size: 20px;
+    }
+    
+    /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+    @media (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .button {
+  background-color: #4CAF50; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+    .button2 {background-color: #008CBA;}
+    .button3 {background-color: #F4A460;}
+      a {
+  color: #4682B4;
+  margin-right: 100px;
+}
+    </style>
+    </head>
+    <body>    
+    <header>
+      <h2>Прогнозирование конечных свойств композиционных материалов</h2>
+    </header>
+    
+    <section>
+      <nav>
+        <ul>
+          <li><a href="{{url_for('matrix_fill')}}">
+            <button class="button">Прогнозирование значения матрица-наполнитель</button>
+          </a></li>
+          <li><a href="{{url_for('strength')}}">
+            <button class="button button2">Прогнозирование прочности при растяжении</button>
+          </a></li>
+          <li><a href="{{url_for('elasticy')}}">
+            <button class="button button3">Прогнозирование модуля упругости при растяжении</button>
+          </a></li>
+        </ul>
+      </nav>
+      
+      <article>
+        <p>Это веб-приложение прогнозирует конечные свойства композиционных материалов на основе
+	введенных пользователем значений. Ансамбли машиного обучения предсказывают <strong>"Прочность при растяжении" и "Модуль упругости при растяжении"</strong>, а нейронные сети <strong>"Соотношение матрица-наполнитель"</strong>.<br><br><br><br></p>
+	<p style="font-size:18px;color:#FF8C00"> Чтобы выбрать нужную модель, нажмите на одну из кнопок расположенных справа.</p>
+      </article>
+    </section>
+    
+    <footer>
+	<p><b><a href="https://github.com/qalansiyah" target="_blank">Репозиторий GitHub</a></b><b><a href="https://dashboard.render.com/" target="_blank">Deploy модели</a></p>
+    </footer>
+</body>
+</html>
