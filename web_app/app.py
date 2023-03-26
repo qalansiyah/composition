@@ -1,10 +1,11 @@
 from flask import Flask, request, render_template
 import pickle
 import tensorflow as tf
-from sklearn.preprocessing import MinMaxScaler
-scaler = MinMaxScaler()
-app = Flask(__name__)
+from catboost import CatBoostRegressor
 
+cat = CatBoostRegressor()
+
+app = Flask(__name__)
 
 @app.route('/')
 def choose_prediction_method():
@@ -17,15 +18,13 @@ def matrix_fill_prediction(params):
     return pred
 
 def strength_prediction(params):
-    with open('models/strength.pkl', 'rb') as file:
-        model = pickle.load(file)
-        pred = model.predict([params])
+    model = cat.load_model('models/strength.cbm',format='cbm')
+    pred = model.predict([params])
     return pred
 
 def elasticy_prediction(params):
-    with open('models/elasticity.pkl', 'rb') as file:
-        model = pickle.load(file)
-        pred = model.predict([params])
+    model = cat.load_model('models/elasticity.cbm',format='cbm')
+    pred = model.predict([params])
     return pred 
 
 
