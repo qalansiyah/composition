@@ -1,10 +1,8 @@
 from flask import Flask, request, render_template
-import pickle
 import tensorflow as tf
 from catboost import CatBoostRegressor
 
 cat = CatBoostRegressor()
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -71,4 +69,4 @@ def elasticy():
     return render_template('elasticy.html', message=message)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')
