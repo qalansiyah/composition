@@ -1,4 +1,4 @@
-# MY_VKR 
+# Composition material 
 
 <h1><strong>Прогнозирование конечных свойств композиционных материалов</strong></h1>
 
